@@ -1,0 +1,34 @@
+<div class="my-2 container w-25">
+  <label for="">Category :</label>
+  <select class="form-select" (change)="filtercategories($event)">
+    <option selected>All</option>
+    @for (item of categories; track $index) {
+      <option >{{item}}</option>
+    }
+  </select>
+  </div>
+  <!-- //////////////////////////////////////////////////////////////////////////////////////////////// -->
+ @if (!loading) {
+  <div class="container">
+    <div class="row">
+      @for (product of data; track $index){
+        <div class="col-lg-3 col-md-4 col-sm-6" >
+          <app-product [info]="product" (item)="addToCart($event)"></app-product>
+          
+      </div>
+    }
+    </div>
+  </div>
+ }
+ <!-- //////////////////////////////////////////////////////////////////////////////////////////////// -->
+@if (loading) {
+  <div class="d-flex justify-content-center align-items-center w-100">
+    <app-spinner></app-spinner>
+  </div>
+}
+
+
+
+
+
+
