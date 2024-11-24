@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './shared/component/header/header.component';
 import { AllProductsComponent } from './products/component/all-products/all-products.component';
 
@@ -17,4 +17,14 @@ import { AllProductsComponent } from './products/component/all-products/all-prod
 })
 export class AppComponent {
   title = 'Offers_Store';
+  showHeader: boolean = true;
+
+  constructor(private router: Router) {
+    this.router.events.subscribe((event: any) => {
+      if (event.url) {
+        this.showHeader = !(event.url === '/login' || event.url === '/register');
+      }
+    });
+  }
+
 }

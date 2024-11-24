@@ -31,6 +31,7 @@ export class AllProductsComponent {
    this.getcategories()
    }
 
+   
    getdata () {
     this.loading = true ;
     this.service.getalldata().subscribe((res:any) =>{
@@ -79,5 +80,4 @@ export class AllProductsComponent {
       localStorage.setItem( "cart" , JSON.stringify(this.cartproduct))
     }
   }
-  
 }

@@ -1,0 +1,20 @@
+<form class="form">
+    <p class="form-title">Sign in to your account</p>
+     <div class="input-container">
+      <input type="email" name="email" placeholder="Enter email" [(ngModel)]="loginObj.email">
+       <span>
+       </span>
+   </div>
+   <div class="input-container">
+       <input type="password" name="password" placeholder="Enter password" [(ngModel)]="loginObj.password">
+     </div>
+      <button type="submit" class="submit" (click)="login()">
+     Sign in
+   </button>
+
+   <p class="signup-link">
+     No account?
+     <a routerLink="/register">Sign up</a>
+   </p>
+</form>
+

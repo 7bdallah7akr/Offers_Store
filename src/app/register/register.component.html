@@ -1,0 +1,13 @@
+<form class="form">
+    <span class="title">Register</span>
+    <label for="username" class="label">Username</label>
+    <input type="text" name="name" required="" class="input" [(ngModel)]="singUpObj.name">
+    <label for="email" class="label">Email</label>
+    <input type="email" name="email" required="" class="input" [(ngModel)]="singUpObj.email">
+    <label for="password" class="label">Password</label>
+    <input type="password" name="password" required="" class="input" [(ngModel)]="singUpObj.password">
+    <button type="submit" class="submit" (click)="register()">Register</button>
+    <p class="signin">Already have an acount ? <a routerLink="/login">Signin</a> </p>
+  </form>
+
+ 
